@@ -17,7 +17,6 @@ public class Cat {
         this.name = nick;
     }
 
-
     public static void main(String[] args) {
         Cat gav = new Cat();
         Cat black = new Cat();
