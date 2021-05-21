@@ -13,7 +13,7 @@ public class Error {
 
     public void printInfo() {
         System.out.println("active - " + active);
-        System.out.println("ststus - " + status);
+        System.out.println("status - " + status);
         System.out.println("message - " + message);
     }
 
