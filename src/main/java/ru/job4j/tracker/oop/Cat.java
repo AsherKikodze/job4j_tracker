@@ -26,7 +26,5 @@ public class Cat {
         black.giveNick("Black");
         gav.show();
         black.show();
-
-
     }
 }
