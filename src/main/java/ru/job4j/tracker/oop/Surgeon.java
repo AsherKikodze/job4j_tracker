@@ -10,12 +10,12 @@ public class Surgeon extends Doctor {
                     String edication,
                     String birthday
                     ) {
-        this.typeOfService = typeOfService;
         super.patientArray = patientArray;
         super.name = name;
         super.surname = surname;
         super.edication = edication;
         super.birthday = birthday;
+        this.typeOfService = typeOfService;
     }
 
     public String getTypeOfService() {

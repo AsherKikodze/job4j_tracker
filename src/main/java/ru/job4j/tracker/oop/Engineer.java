@@ -14,12 +14,12 @@ public class Engineer extends Profession {
                   String surname,
                   String edication,
                   String birthday) {
-        this.autoCadExperience = autoCadExperience;
-        this.coursesArray = coursesArray;
         super.name = name;
         super.surname = surname;
         super.edication = edication;
         super.birthday = birthday;
+        this.autoCadExperience = autoCadExperience;
+        this.coursesArray = coursesArray;
     }
 
     public boolean isAutoCadExperience() {

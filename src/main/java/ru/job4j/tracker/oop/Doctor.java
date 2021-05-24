@@ -14,13 +14,13 @@ public class Doctor extends Profession {
                   String surname,
                   String edication,
                   String birthday) {
-        this.stateLicense = stateLicense;
-        this.patientArray = patientArray;
         super.name = name;
         super.surname = surname;
         super.edication = edication;
         super.birthday = birthday;
-    }
+        this.stateLicense = stateLicense;
+        this.patientArray = patientArray;
+        }
 
     public boolean findPatient(String patientName) {
         boolean rsl = false;

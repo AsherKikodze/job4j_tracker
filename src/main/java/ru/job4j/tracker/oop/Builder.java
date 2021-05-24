@@ -10,13 +10,13 @@ public class Builder extends Engineer {
                       String surname,
                       String edication,
                       String birthday) {
-        this.electricityLevel = electricityLevel;
         super.autoCadExperience = autoCadExperience;
         super.coursesArray = coursesArray;
         super.name = name;
         super.surname = surname;
         super.edication = edication;
         super.birthday = birthday;
+        this.electricityLevel = electricityLevel;
     }
 
     public int getElectricityLevel() {

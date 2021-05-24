@@ -12,13 +12,13 @@ public class Dentist extends Doctor {
                    String edication,
                    String birthday
     ) {
-        this.workingHoursStart = workingHoursStart;
-        this.workingHoursEnd = workingHoursEnd;
         super.patientArray = patientArray;
         super.name = name;
         super.surname = surname;
         super.edication = edication;
         super.birthday = birthday;
+        this.workingHoursStart = workingHoursStart;
+        this.workingHoursEnd = workingHoursEnd;
     }
 
     public int getWorkingHoursStart() {
