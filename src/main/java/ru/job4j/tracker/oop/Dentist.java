@@ -1,12 +1,24 @@
 package ru.job4j.tracker.oop;
 
 public class Dentist extends Doctor {
-    public String adress;
     public int workingHoursStart;
     public int workingHoursEnd;
 
-    public String getAdress() {
-        return adress;
+    public Dentist(int workingHoursStart,
+                   int workingHoursEnd,
+                   String[] patientArray,
+                   String name,
+                   String surname,
+                   String edication,
+                   String birthday
+    ) {
+        this.workingHoursStart = workingHoursStart;
+        this.workingHoursEnd = workingHoursEnd;
+        super.patientArray = patientArray;
+        super.name = name;
+        super.surname = surname;
+        super.edication = edication;
+        super.birthday = birthday;
     }
 
     public int getWorkingHoursStart() {
