@@ -1,9 +1,9 @@
 package ru.job4j.tracker.encapsulation;
 
 public class Config {
-    protected String name;
-    protected int position;
-    protected String[] properties;
+    private String name;
+    private int position;
+    private String[] properties;
 
     public Config(String name) {
         this.name = name;
