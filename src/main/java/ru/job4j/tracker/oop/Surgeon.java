@@ -5,16 +5,13 @@ public class Surgeon extends Doctor {
 
     public Surgeon(String typeOfService,
                     String[] patientArray,
+                    boolean stateLicense,
                     String name,
                     String surname,
                     String edication,
                     String birthday
                     ) {
-        super.patientArray = patientArray;
-        super.name = name;
-        super.surname = surname;
-        super.edication = edication;
-        super.birthday = birthday;
+        super(stateLicense, patientArray, name, surname, edication, birthday);
         this.typeOfService = typeOfService;
     }
 
