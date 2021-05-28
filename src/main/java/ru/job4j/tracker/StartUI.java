@@ -7,18 +7,23 @@ public class StartUI {
         Item itemThree = new Item("Name 3");
         Item itemFour = new Item("Name 4");
         Item itemFive = new Item("Name 1");
+        Item itemThreeChange = new Item("Name 3 changed !!!");
         Tracker tracker = new Tracker();
         tracker.add(itemOne);
         tracker.add(itemTwo);
         tracker.add(itemThree);
         tracker.add(itemFour);
         tracker.add(itemFive);
-        for (Item i:tracker.findAll()) {
-            System.out.println(i.getId() + " - " + i.getName());
+        for (Item i: tracker.findAll()) {
+            System.out.println(i.getId() + " " + i.getName());
         }
-        System.out.println("=======");
-        for (Item i:tracker.findByName("Name 1")) {
-            System.out.println(i.getId() + " - " + i.getName());
+        System.out.println("==========");
+        int id = itemThree.getId();
+        boolean res = tracker.replace(id, itemThreeChange);
+        Item newItem = tracker.findById(id);
+        for (Item i: tracker.findAll()) {
+            System.out.println(i.getId() + " " + i.getName());
         }
+
     }
 }
