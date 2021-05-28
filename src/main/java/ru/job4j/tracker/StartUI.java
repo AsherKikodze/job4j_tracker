@@ -3,9 +3,9 @@ package ru.job4j.tracker;
 public class StartUI {
     public static void main(String[] args) {
         Item itemOne = new Item("Name 1");
-        Item itemTwo = new Item(null);
+        Item itemTwo = new Item("Name 2");
         Item itemThree = new Item("Name 3");
-        Item itemFour = new Item(null);
+        Item itemFour = new Item("Name 4");
         Item itemFive = new Item("Name 1");
         Tracker tracker = new Tracker();
         tracker.add(itemOne);
