@@ -33,7 +33,7 @@ public class Tracker {
         int j = 0;
         for (int i = 0; i < size; i++) {
             if (items[i].getName().equals(key)) {
-                found[j] = findAll()[i];
+                found[j] = items[i];
                 j++;
             }
         }
