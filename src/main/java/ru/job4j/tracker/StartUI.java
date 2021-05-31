@@ -21,40 +21,26 @@ public class StartUI {
                 }
             } else if (select == 2) {
                 System.out.println("=== Edit Item ====");
-                boolean res = false;
-                int id = 0;
-                 while (!res) {
-                    System.out.print("Enter Id: ");
-                    id = Integer.valueOf(scanner.nextLine());
-                    res = tracker.findById(id) != null;
-                    if (!res) {
-                        System.out.println("Id not valid");
-                    }
-                }
-                System.out.println("=== Edit Item ID = "+ id +" ====");
+                int id = Integer.valueOf(scanner.nextLine());
+                System.out.println("=== Edit Item ID = " + id + " ====");
                 System.out.print("Enter new name: ");
                 String name = scanner.nextLine();
                 Item newItem = new Item(name);
-                res = tracker.replace(id, newItem);
-                if (!res) {
+                boolean res = tracker.replace(id, newItem);
+                if (res) {
+                    System.out.println("Edit successfull");
+                } else {
                     System.out.println("Edit failed");
                 }
             } else if (select == 3) {
                 System.out.println("=== Delete Item ====");
-                boolean res = false;
-                int id = 0;
-                while (!res) {
-                    System.out.print("Enter Id: ");
-                    id = Integer.valueOf(scanner.nextLine());
-                    res = tracker.findById(id) != null;
-                    if (!res) {
-                        System.out.println("Id not valid");
-                    }
-                }
-                res = tracker.delete(id);
-                if (!res) {
+                int id = Integer.valueOf(scanner.nextLine());
+                boolean res = tracker.delete(id);
+                if (res) {
+                    System.out.println("Delete successfull");
+                 } else {
                     System.out.println("Delete failed");
-                 }
+                }
             } else if (select == 4) {
                 System.out.println("=== Find Item by Id ====");
                 System.out.print("Enter Id: ");
@@ -70,7 +56,7 @@ public class StartUI {
                 System.out.print("Enter new name: ");
                 String name = scanner.nextLine();
                 Item[] foundItem = tracker.findByName(name);
-                if (foundItem != null) {
+                if (foundItem.length > 0) {
                     for (Item i : foundItem) {
                         System.out.println(i);
                     }
