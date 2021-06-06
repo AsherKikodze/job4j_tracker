@@ -3,7 +3,7 @@ package ru.job4j.tracker.oop;
 import ru.job4j.tracker.Input;
 
 public class StubInput implements Input {
-    private String [] answers;
+    private String[] answers;
     private int position = 0;
 
     public StubInput(String[] answers) {
@@ -17,6 +17,6 @@ public class StubInput implements Input {
 
     @Override
     public int askInt(String question) {
-        return 0;
+        return Integer.parseInt(askStr(question));
     }
 }
