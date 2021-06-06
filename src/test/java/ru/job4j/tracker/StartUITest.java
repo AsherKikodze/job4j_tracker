@@ -29,4 +29,20 @@ public class StartUITest {
         StartUI.editItem(new StubInput(answers), tracker);
         Item replaced = tracker.findById(item.getId());
         assertThat(replaced.getName(), is("replaced item"));
-    }}
+    }
+
+    @Test
+    public void whenDeleteItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("new item for test");
+        tracker.add(item);
+        String[] answers = {
+                String.valueOf(item.getId())
+        };
+        StartUI.deleteItem(new StubInput(answers), tracker);
+        Item replaced = tracker.findById(item.getId());
+        //assertThat(replaced, null);
+        assertNull(replaced);
+    }
+
+}
