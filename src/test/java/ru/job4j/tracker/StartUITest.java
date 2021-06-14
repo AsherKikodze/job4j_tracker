@@ -96,8 +96,8 @@ public class StartUITest {
                         "0. Show all items" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator() +
                         "=== Show all items ====" + System.lineSeparator() +
-                        item1.toString() + System.lineSeparator() +
-                        item2.toString() + System.lineSeparator() +
+                        item1 + System.lineSeparator() +
+                        item2 + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Show all items" + System.lineSeparator() +
                         "1. Exit" + System.lineSeparator()
