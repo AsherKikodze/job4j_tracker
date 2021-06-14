@@ -23,6 +23,7 @@ public class StartUITest {
     @Test
     public void whenReplaceItem() {
         Tracker tracker = new Tracker();
+        StubOutput st = new StubOutput();
         /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item("Replaced item"));
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
@@ -31,16 +32,17 @@ public class StartUITest {
                 new String[]{"0", String.valueOf(item.getId()), replacedName, "1"}
         );
         UserAction[] actions = {
-                new EditAction(new ConsoleOutput()),
+                new EditAction(st),
                 new ExitAction()
         };
-        new StartUI(new ConsoleOutput()).init(in, tracker, actions);
+        new StartUI(st).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()).getName(), is(replacedName));
     }
 
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
+        StubOutput st = new StubOutput();
         /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item("Deleted item"));
         /* Входные данные должны содержать ID добавленной заявки item.getId() */
@@ -48,10 +50,10 @@ public class StartUITest {
                 new String[] {"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
-                new DeleteAction(new ConsoleOutput()),
+                new DeleteAction(st),
                 new ExitAction()
         };
-        new StartUI(new ConsoleOutput()).init(in, tracker, actions);
+        new StartUI(st).init(in, tracker, actions);
         //assertThat(tracker.findById(item.getId()), is(nullValue()));
         assertNull(tracker.findById(item.getId()));
     }
