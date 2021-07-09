@@ -18,11 +18,10 @@ public class PhoneDictionary {
     public ArrayList<Person> find(String key) {
         ArrayList<Person> result = new ArrayList<>();
         for (Person pers : persons) {
-            String search = pers.getName()
-                    + '\n' + pers.getSurname()
-                    + '\n' + pers.getPhone()
-                    + '\n' + pers.getAddress();
-            if (search.contains(key)) {
+            if (pers.getName().contains(key)
+                    || pers.getSurname().contains(key)
+                    || pers.getPhone().contains(key)
+                    || pers.getAddress().contains(key)) {
                 result.add(pers);
             }
             }
