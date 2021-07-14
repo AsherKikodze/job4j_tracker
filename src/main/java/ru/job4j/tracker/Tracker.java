@@ -1,65 +1,63 @@
 package ru.job4j.tracker;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Tracker {
-    private final Item[] items = new Item[100];
+    //private final Item[] items = new Item[100];
+    private final ArrayList<Item> items = new ArrayList<>();
     private int ids = 1;
-    private int size = 0;
 
     public Item add(Item item) {
         item.setId(ids++);
-        items[size++] = item;
+        //items[size++] = item;
+        items.add(item);
         return item;
     }
 
     public Item findById(int id) {
-        int k = indexOf(id);
-        return k != -1 ? items[k] : null;
-    }
-
-    public Item[] findAll() {
-        return Arrays.copyOf(items, size);
-    }
-
-    public Item[] findByName(String key) {
-        Item[] found = new Item[size];
-        int j = 0;
-        for (int i = 0; i < size; i++) {
-            if (items[i].getName().equals(key)) {
-                found[j] = items[i];
-                j++;
+        for (Item item : items) {
+            if (item.getId() == id) {
+                return item;
             }
         }
-        return Arrays.copyOf(found, j);
+        return null;
     }
 
-    private int indexOf(int id) {
-        int rsl = -1;
-        for (int i = 0; i < size; i++) {
-            if (items[i].getId() == id) {
-                rsl = i;
+    public ArrayList<Item> findAll() {
+        return items;
+    }
+
+    public ArrayList<Item> findByName(String key) {
+        ArrayList<Item> found = new ArrayList<>();
+        for (Item item : items) {
+            if (item.getName().equals(key)) {
+                found.add(item);
+            }
+        }
+        return found;
+    }
+
+    public boolean replace(int id, Item item) {
+        boolean rsl = false;
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getId() == id) {
+                item.setId(id);
+                items.remove(i);
+                items.add(item);
+                rsl = true;
                 break;
             }
         }
         return rsl;
     }
 
-    public boolean replace(int id, Item item) {
-        int k = indexOf(id);
-        boolean rsl = k != -1;
-        if (rsl) {
-            item.setId(id);
-            items[k] = item;
-        }
-        return rsl;
-    }
-
     public boolean delete(int id) {
-        int k = indexOf(id);
-        boolean rsl = k != -1;
-        if (rsl) {
-            System.arraycopy(items, k + 1, items, k, size - k - 1);
-            items[size--] = null;
+        boolean rsl = false;
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getId() == id) {
+                items.remove(i);
+                rsl = true;
+                break;
+            }
         }
         return rsl;
     }
