@@ -31,9 +31,7 @@ public class Tracker {
     }
 
     public List<Item> findAll() {
-        List<Item> res = new ArrayList<>();
-        res.addAll(items);
-        return res;
+         return List.copyOf(items);
     }
 
     public List<Item> findByName(String key) {
